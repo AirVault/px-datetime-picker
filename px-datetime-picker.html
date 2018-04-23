@@ -43,62 +43,58 @@ Custom property | Description
       <iron-media-query query$="(max-width: {{_getCollapseQuery(collapseAt)}})" query-matches="{{_belowCollapseSize}}"></iron-media-query>
     </template>
 
-    <div id="thisThingIsNew">
-
-      <px-datetime-field class$="{{_getClassForDateTimeField(_adjustSizeToContainer)}}"
-        id="field"
-        slot="dropdown-trigger"
-        moment-obj="{{_tempMomentObj}}"
-        date-format="[[dateFormat]]"
-        time-format="[[timeFormat]]"
-        hide-time="[[hideTime]]"
-        time-zone="{{timeZone}}"
-        show-time-zone="[[showTimeZone]]"
-        is-selected="[[opened]]"
-        block-future-dates="[[blockFutureDates]]"
-        block-past-dates="[[blockPastDates]]"
-        min-date="[[minDate]]"
-        max-date="[[maxDate]]"
-        required="[[required]]"
-        is-valid="{{fieldIsValid}}"
-        prevent-notification-on-change
-        prevent-cell-focus="[[_fillContainer]]"
-        resources="[[resources]]"
-        language="[[language]]"
-        formats="[[formats]]"
-        hoist="[[hoist]]"
-        container-type="[[containerType]]"
-        hide-clear-button="[[hideClearButton]]">
-      </px-datetime-field>
-      <px-overlay-content
+    <px-datetime-field class$="{{_getClassForDateTimeField(_adjustSizeToContainer)}}"
+      id="field"
+      slot="dropdown-trigger"
+      moment-obj="{{_tempMomentObj}}"
+      date-format="[[dateFormat]]"
+      time-format="[[timeFormat]]"
+      hide-time="[[hideTime]]"
+      time-zone="{{timeZone}}"
+      show-time-zone="[[showTimeZone]]"
+      is-selected="[[opened]]"
+      block-future-dates="[[blockFutureDates]]"
+      block-past-dates="[[blockPastDates]]"
+      min-date="[[minDate]]"
+      max-date="[[maxDate]]"
+      required="[[required]]"
+      is-valid="{{fieldIsValid}}"
+      prevent-notification-on-change
+      prevent-cell-focus="[[_fillContainer]]"
+      resources="[[resources]]"
+      language="[[language]]"
+      formats="[[formats]]"
       hoist="[[hoist]]"
       container-type="[[containerType]]"
-      event-names='["px-datetime-button-clicked"]'>
-      <px-datetime-picker-content
-        id="content"
-        opened="{{opened}}"
-        temp-moment-obj="{{_tempMomentObj}}"
-        time-format="[[timeFormat]]"
-        hide-time="[[hideTime]]"
-        time-zone="[[timeZone]]"
-        show-buttons="[[showButtons]]"
-        base-date="[[_tempMomentObj]]"
-        day-week-start-index="[[dayWeekStartIndex]]"
-        block-future-dates="[[blockFutureDates]]"
-        block-past-dates="[[blockPastDates]]"
-        min-date="[[minDate]]"
-        max-date="[[maxDate]]"
-        field-is-valid="[[fieldIsValid]]"
-        fill-container="[[_fillContainer]]"
-        fit-into-element="[[_fitIntoElement]]"
-        field-elem="[[_returnField()]]"
-        resources="[[resources]]"
-        language="[[language]]"
-        formats="[[formats]]">
-      </px-datetime-picker-content>
-    </px-overlay-content>
-
-    </div>
+      hide-clear-button="[[hideClearButton]]">
+    </px-datetime-field>
+    <px-overlay-content
+    hoist="[[hoist]]"
+    container-type="[[containerType]]"
+    event-names='["px-datetime-button-clicked"]'>
+    <px-datetime-picker-content
+      id="content"
+      opened="{{opened}}"
+      temp-moment-obj="{{_tempMomentObj}}"
+      time-format="[[timeFormat]]"
+      hide-time="[[hideTime]]"
+      time-zone="[[timeZone]]"
+      show-buttons="[[showButtons]]"
+      base-date="[[_tempMomentObj]]"
+      day-week-start-index="[[dayWeekStartIndex]]"
+      block-future-dates="[[blockFutureDates]]"
+      block-past-dates="[[blockPastDates]]"
+      min-date="[[minDate]]"
+      max-date="[[maxDate]]"
+      field-is-valid="[[fieldIsValid]]"
+      fill-container="[[_fillContainer]]"
+      fit-into-element="[[_fitIntoElement]]"
+      field-elem="[[_returnField()]]"
+      resources="[[resources]]"
+      language="[[language]]"
+      formats="[[formats]]">
+    </px-datetime-picker-content>
+  </px-overlay-content>
 
   </template>
 </dom-module>
