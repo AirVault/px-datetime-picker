@@ -44,23 +44,27 @@
         <p class="zeta u-mt0">See API Reference below for more details</p>
         <p class="u-mb++">Submitted date: <strong>{{props.momentObj.value}}</strong></p>
 
-        <px-datetime-picker
-          moment-obj="{{props.momentObj.value}}"
-          date-format="{{props.dateFormat.value}}"
-          time-format="{{props.timeFormat.value}}"
-          show-buttons="{{props.showButtons.value}}"
-          required="{{props.required.value}}"
-          block-future-dates="{{props.blockFutureDates.value}}"
-          block-past-dates="{{props.blockPastDates.value}}"
-          hide-time="{{props.hideTime.value}}"
-          show-time-zone="{{props.showTimeZone.value}}"
-          time-zone="{{props.timeZone.value}}"
-          min-date="{{props.minDate.value}}"
-          max-date="{{props.maxDate.value}}"
-          fill-container="{{props.fillContainer.value}}"
-          collapse-at="{{props.collapseAt.value}}"
-          hoist="[[props.hoist.value]]">
-        </px-datetime-picker>
+        <div id="pxdateTimePickerContainer">
+          <px-datetime-picker
+            moment-obj="{{props.momentObj.value}}"
+            date-format="{{props.dateFormat.value}}"
+            time-format="{{props.timeFormat.value}}"
+            show-buttons="{{props.showButtons.value}}"
+            required="{{props.required.value}}"
+            block-future-dates="{{props.blockFutureDates.value}}"
+            block-past-dates="{{props.blockPastDates.value}}"
+            hide-time="{{props.hideTime.value}}"
+            show-time-zone="{{props.showTimeZone.value}}"
+            time-zone="{{props.timeZone.value}}"
+            min-date="{{props.minDate.value}}"
+            max-date="{{props.maxDate.value}}"
+            fill-container="{{props.fillContainer.value}}"
+            collapse-at="{{props.collapseAt.value}}"
+            hoist="[[props.hoist.value]]"
+            hide-clear-button="{{props.hideClearButton.value}}"
+            adjust-size-to-container="{{props.adjustSizeToContainer.value}}">
+          </px-datetime-picker>
+        </div>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
 
@@ -143,7 +147,9 @@
               collapseAt: "720px",
               showTimeZone: "abbreviatedText",
               timeZone: "America/Los_Angeles",
-              momentObj: Px.moment().startOf('day')
+              momentObj: Px.moment().startOf('day'),
+              hideClearButton: "false",
+              adjustSizeToContainer: "true"
             },
 
             { configName: "Show buttons",
@@ -155,7 +161,9 @@
               hideTime: false,
               showTimeZone: "text",
               timeZone: "UTC",
-              momentObj: null
+              momentObj: null,
+              hideClearButton: "false",
+              adjustSizeToContainer: "true"
             },
 
             { configName: "24 hour time",
@@ -167,7 +175,9 @@
               hideTime: false,
               showTimeZone: "extendedDropdown",
               timeZone: "America/New_York",
-              momentObj: Px.moment().startOf('day')
+              momentObj: Px.moment().startOf('day'),
+              hideClearButton: "false",
+              adjustSizeToContainer: "true"
             }
           ]
         }
@@ -218,6 +228,18 @@
       fillContainer: {
         type: Boolean,
         defaultValue: false,
+        inputType: 'toggle'
+      },
+
+      hideClearButton: {
+        type: Boolean,
+        defaultValue: false,
+        inputType: 'toggle'
+      },
+
+      adjustSizeToContainer: {
+        type: Boolean,
+        defaultValue: true,
         inputType: 'toggle'
       },
 
