@@ -1,6 +1,6 @@
 {
   "name": "px-datetime-picker",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "main": [
     "px-datetime-picker.html"
   ],
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "polymer": "#1.9 - 2",
-    "px-datetime-field": "https://github.com/AirVault/px-datetime-field.git#2.2.1",
+    "px-datetime-field": "https://github.com/AirVault/px-datetime-field.git#2.2.2",
     "px-calendar-picker": "^2.0.0",
     "px-datetime-common": "^3.0.0",
     "iron-a11y-keys-behavior": "^2.0.0",
